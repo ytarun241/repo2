@@ -1,0 +1,21 @@
+<project name="project2_new"  default="B">
+<property name="drivename" value="C:\"/>
+<property name="testpath" value="${drivename}temp\tarunproject2"/>
+	<target name="A">
+	   <echo>tarunproject2</echo>
+		<mkdir dir="tarunproject2\dllfiles"/>
+		<mkdir dir="tarunproject2\notepad_dll"/>
+		<copy todir="tarunproject2\dllfiles">
+			<fileset dir="C:\Users\T\Dropbox\ToTarun\Notepad++"/>
+		</copy>
+	</target>
+			 
+	<target name="B" depends="A">
+	<echo>notepad++</echo>
+		<copy todir="${testpath}\notepad_dll">
+		  <fileset dir="${drivename}Users\T\Dropbox\ToTarun\Notepad++">
+			<include name="**/*.dll"/>
+		   </fileset>
+		</copy>
+	</target>
+</project> 
